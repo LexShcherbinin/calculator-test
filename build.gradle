@@ -23,7 +23,7 @@ apply plugin: 'io.qameta.allure'
 group 'com.github.shcherbinin'
 version '1.0.0'
 
-sourceCompatibility = 13
+//sourceCompatibility = 13
 
 repositories {
     mavenCentral()
