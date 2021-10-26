@@ -23,7 +23,7 @@ apply plugin: 'maven'
 group 'com.github.shcherbinin'
 version '1.0.0'
 
-//sourceCompatibility = JavaVersion.VERSION_15
+sourceCompatibility = JavaVersion.VERSION_15
 
 repositories {
     mavenCentral()
