@@ -1,24 +1,24 @@
-//buildscript {
-//    repositories {
-//        maven {
-//            url "https://plugins.gradle.org/m2/"
-//        }
-//    }
-//    dependencies {
-//        classpath "io.qameta.allure:allure-gradle:2.8.1"
-//    }
-//}
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.8.1"
+    }
+}
 
 plugins {
     id 'groovy'
     id 'idea'
-//    id 'io.qameta.allure' version '2.5'
+    id 'io.qameta.allure' version '2.5'
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
-//apply plugin: 'maven-publish'
-//apply plugin: 'io.qameta.allure'
+apply plugin: 'maven-publish'
+apply plugin: 'io.qameta.allure'
 
 group 'com.github.shcherbinin'
 version '1.0.0'
@@ -29,15 +29,15 @@ repositories {
     mavenCentral()
 }
 
-//allure {
-//    autoconfigure = true
-//
-//    version = '2.13.1'
-//
-//    useJUnit5 {
-//        version = '2.13.1'
-//    }
-//}
+allure {
+    autoconfigure = true
+
+    version = '2.13.1'
+
+    useJUnit5 {
+        version = '2.13.1'
+    }
+}
 
 dependencies {
     implementation "org.junit.jupiter:junit-jupiter-api:${jUpiterVersion}"
@@ -52,9 +52,9 @@ repositories {
 }
 
 test {
-//    systemProperties['junit.jupiter.execution.parallel.enabled'] = true
-//    systemProperties['junit.jupiter.execution.parallel.mode.default'] = 'concurrent'
-//    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    systemProperties['junit.jupiter.execution.parallel.enabled'] = true
+    systemProperties['junit.jupiter.execution.parallel.mode.default'] = 'concurrent'
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 
     useJUnitPlatform()
 }
